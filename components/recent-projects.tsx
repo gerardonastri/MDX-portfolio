@@ -2,12 +2,19 @@
 import Link from 'next/link'
 import { getProjects } from '@/lib/projects'
 import Projects from '@/components/projects'
+import * as motion from "framer-motion/client"
+
 
 export default async function RecentProjects() {
   const projects = await getProjects(2)
 
   return (
-    <section className='pb-24'>
+    <motion.section 
+      initial={{opacity: 0}}
+      whileInView={{opacity: 100}}
+      transition={{duration: 0.5, ease: "easeIn"}}
+      className='pb-24'
+    >
       <div>
         <h2 className='title mb-12'>Recent projects</h2>
         <Projects projects={projects} />
@@ -19,6 +26,6 @@ export default async function RecentProjects() {
           <span>All projects</span>
         </Link>
       </div>
-    </section>
+    </motion.section>
   )
 }

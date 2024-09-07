@@ -2,12 +2,18 @@
 import Link from 'next/link'
 import { getPosts } from '@/lib/posts'
 import Posts from '@/components/Posts'
+import * as motion from "framer-motion/client"
 
 export default async function RecentPosts() {
   const posts = await getPosts(4) //prendo solo 4 posts
 
   return (
-    <section className='pb-24'>
+    <motion.section  
+      initial={{opacity: 0}}
+      whileInView={{opacity: 100}}
+      transition={{duration: 0.5, ease: "easeIn"}}
+      className='pb-24'
+    >
       <div>
         <h2 className='title mb-12'>Recent posts</h2>
         <Posts posts={posts} />
@@ -19,6 +25,6 @@ export default async function RecentPosts() {
           <span>All posts</span>
         </Link>
       </div>
-    </section>
+    </motion.section >
   )
 }
