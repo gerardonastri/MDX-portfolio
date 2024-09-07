@@ -44,9 +44,6 @@ export default function NewsletterForm() {
 
   return (
     <section 
-    initial={{opacity: 0}}
-    whileInView={{opacity: 100}}
-    transition={{duration: 1, ease: "easeIn"}}
     >
       <Reveal>
       <Card className='rounded-lg border-0 dark:border'>
