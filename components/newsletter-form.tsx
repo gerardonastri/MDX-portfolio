@@ -12,6 +12,7 @@ import { Input } from '@/components/ui/input'
 import { subscribe } from '@/lib/actions'
 import { Card, CardContent } from '@/components/ui/card'
 import * as motion from "framer-motion/client"
+import Reveal from '@/utils/Reveal'
 
 
 type Inputs = z.infer<typeof NewsletterFormSchema>
@@ -42,11 +43,12 @@ export default function NewsletterForm() {
   }
 
   return (
-    <motion.section 
+    <section 
     initial={{opacity: 0}}
     whileInView={{opacity: 100}}
     transition={{duration: 1, ease: "easeIn"}}
     >
+      <Reveal>
       <Card className='rounded-lg border-0 dark:border'>
         <CardContent className='flex flex-col gap-8 pt-6 md:flex-row md:justify-between md:pt-8'>
           <div>
@@ -98,6 +100,7 @@ export default function NewsletterForm() {
           </form>
         </CardContent>
       </Card>
-    </motion.section>
+      </Reveal>
+    </section>
   )
 }

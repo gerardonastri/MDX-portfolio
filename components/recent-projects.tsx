@@ -2,30 +2,33 @@
 import Link from 'next/link'
 import { getProjects } from '@/lib/projects'
 import Projects from '@/components/projects'
-import * as motion from "framer-motion/client"
+import Reveal from '@/utils/Reveal'
 
 
 export default async function RecentProjects() {
   const projects = await getProjects(2)
 
   return (
-    <motion.section 
-      initial={{opacity: 0}}
-      whileInView={{opacity: 100}}
-      transition={{duration: 0.5, ease: "easeIn"}}
+    <section
       className='pb-24'
     >
-      <div>
+        <div>
+        <Reveal>
         <h2 className='title mb-12'>Recent projects</h2>
-        <Projects projects={projects} />
+        </Reveal>
+        {/* <Reveal> */}
+          <Projects projects={projects} />
+        {/* </Reveal> */}
 
-        <Link
-          href='/projects'
-          className='mt-8 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
-        >
-          <span>All projects</span>
-        </Link>
+        <Reveal>
+          <Link
+            href='/projects'
+            className='mt-8 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
+          >
+            <span>All projects</span>
+          </Link>
+        </Reveal>
       </div>
-    </motion.section>
+    </section>
   )
 }
