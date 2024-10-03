@@ -89,6 +89,7 @@
 
   .prose pre {
     @apply overflow-x-auto rounded-lg bg-accent px-5 py-4 text-sm;
+    line-height: 0.8rem !important;
   }
 
   .prose code {
@@ -97,7 +98,7 @@
 
   .prose pre code {
     @apply p-0;
-    line-height: 1.75;
+    line-height: 0.8;
   }
 
   .prose code span {
