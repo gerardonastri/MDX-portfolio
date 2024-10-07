@@ -2,11 +2,13 @@ import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 
 import { cn } from '@/lib/utils'
-
 import './globals.css'
 import Providers from '@/components/providers'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
+
+import {Person} from 'schema-dts'
+
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const playfair = Playfair_Display({
@@ -90,47 +92,49 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
+  const structuredData =  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gerardo Nastri",
+    "jobTitle": "Full Stack Web and Mobile Developer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Salerno",
+      "addressCountry": "IT"
+    },
+    "email": "mailto:tuo-email@example.com",
+    "url": "https://www.gerardonastri.it/",
+    "sameAs": [
+      "https://www.linkedin.com/in/gerardo-nastri-55325b21b/",
+      "https://github.com/gerardonastri"
+    ],
+    "knowsAbout": [
+      "React",
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "Tailwind CSS",
+      "C",
+      "C++",
+      "SQL",
+      "Python"
+    ],
+    "alumniOf": "IIS Margherita hack baronissi",
+    "description": "Gerardo Nastri, a full stack web and mobile developer from Salerno, specializes in creating web and mobile applications using technologies like React, Next.js, Node.js, and MongoDB."
+  }
+
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Gerardo Nastri",
-              "jobTitle": "Full Stack Web and Mobile Developer",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Salerno",
-                "addressCountry": "IT"
-              },
-              "email": "mailto:tuo-email@example.com",
-              "url": "https://www.gerardonastri.it/",
-              "sameAs": [
-                "https://www.linkedin.com/in/gerardo-nastri-55325b21b/",
-                "https://github.com/gerardonastri"
-              ],
-              "knowsAbout": [
-                "React",
-                "Next.js",
-                "Node.js",
-                "MongoDB",
-                "React Native",
-                "Expo",
-                "TypeScript",
-                "Tailwind CSS",
-                "C",
-                "C++",
-                "SQL",
-                "Python"
-              ],
-              "alumniOf": "IIS Margherita hack baronissi",
-              "description": "Gerardo Nastri, a full stack web and mobile developer from Salerno, specializes in creating web and mobile applications using technologies like React, Next.js, Node.js, and MongoDB."
-            }
-          `}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body
         className={cn(
