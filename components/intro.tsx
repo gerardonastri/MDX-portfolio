@@ -12,9 +12,7 @@ export default function Intro() {
         </Reveal>
         <Reveal>
           <p className='mt-3 font-light text-muted-foreground'>
-            I&#39;m a full stack web and mobile developer based in Salerno, Italy. I&#39;m
-            passionate about learning new technologies and sharing knowledge with
-            others.
+          I am a full-stack developer specializing in web and mobile solutions. Driven by a passion for technology and a commitment to innovation, I focus on building seamless and functional digital experiences. Despite my young age, I have already developed skills that allow me to tackle complex and dynamic projects. Based in Salerno, I continuously strive to grow professionally, always seeking new challenges that enable me to improve and make a meaningful impact.
           </p>
         </Reveal>
       </div>

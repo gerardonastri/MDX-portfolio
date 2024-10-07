@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: 'Gerardo Nastri',
-  description: 'Sito Portfolio di Gerardo Nastri. Web developer full stack.',
+  description: 'Gerardo Nastri, sviluppatore full stack di Salerno specializzato in web e mobile con React, Next.js, Node.js, MongoDB, React Native, Expo, TypeScript e Tailwind CSS. Scopri i miei progetti e articoli tecnici',
   referrer: "origin-when-cross-origin",
   keywords: [
     "web developer",
@@ -94,6 +94,43 @@ export default function RootLayout({
     <html lang='en' suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Gerardo Nastri",
+              "jobTitle": "Full Stack Web and Mobile Developer",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Salerno",
+                "addressCountry": "IT"
+              },
+              "email": "mailto:tuo-email@example.com",
+              "url": "https://www.gerardonastri.it/",
+              "sameAs": [
+                "https://www.linkedin.com/in/gerardo-nastri-55325b21b/",
+                "https://github.com/gerardonastri"
+              ],
+              "knowsAbout": [
+                "React",
+                "Next.js",
+                "Node.js",
+                "MongoDB",
+                "React Native",
+                "Expo",
+                "TypeScript",
+                "Tailwind CSS",
+                "C",
+                "C++",
+                "SQL",
+                "Python"
+              ],
+              "alumniOf": "IIS Margherita hack baronissi",
+              "description": "Gerardo Nastri, a full stack web and mobile developer from Salerno, specializes in creating web and mobile applications using technologies like React, Next.js, Node.js, and MongoDB."
+            }
+          `}
+        </script>
       </head>
       <body
         className={cn(
