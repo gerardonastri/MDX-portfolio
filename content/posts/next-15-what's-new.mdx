@@ -1,0 +1,123 @@
+---
+  title: Next js 15, What's new
+  summary: Next.js 15 introduces significant upgrades, including enhanced Server Components for faster page loads, optimized edge caching, and a streamlined routing system. With improved TypeScript support, revamped CSS Modules, and powerful middleware, it focuses on performance, developer experience, and flexible customization, making it a top choice for modern React applications.
+  image: /images/posts/nextjs-15.png
+  author: 'Gerardo Nastri'
+  publishedAt: '2024-10-29'
+---
+
+# What's New in Next.js 15
+
+Next.js 15 has brought a fresh wave of features, optimizations, and refinements that further solidify its position as a premier framework for React applications. From better edge caching to enhanced developer experience, let’s dive into the top changes in this latest release.
+
+## Full Support of React 19 with New Hooks in Next.js 15
+
+Next.js 15 fully supports React 19, enabling the use of powerful new hooks to enhance functionality and state management in applications. Let’s explore some of the standout hooks:
+
+## `useActionState`: Manage Ongoing Actions in UI
+
+`useActionState` is a new hook for managing and displaying ongoing action states in the UI.
+
+```jsx
+// ActionStateComponent.js
+const submitActionWithCurrentState = async (prevState, formData) => {
+  // Simulate adding user data
+};
+
+export default function ActionStateComponent() {
+  const [state, formAction] = useActionState(submitActionWithCurrentState, {
+    users: [],
+    error: null,
+  });
+
+  return (
+    <div>
+      <h1>useActionState Example</h1>
+      <form action={formAction} id="action-hook-form">
+        <input type="text" name="username" placeholder="Enter your name" />
+        <button type="submit">Submit</button>
+      </form>
+      <div>{state?.error}</div>
+      {state?.users?.map((user) => (
+        <div key={user.username}>Name: {user.username} Age: {user.age}</div>
+      ))}
+    </div>
+  );
+}
+```
+
+## Updated Caching Strategies
+In response to developer feedback, Next.js 15 refines caching strategies to make data fetching more predictable.
+
+No More Automatic Caching: Fetch requests and route handlers no longer cache by default; use ```{ cache: 'force-cache' }``` to cache explicitly.
+```jsx
+async function getData() {
+  const res = await fetch('https://api.dimeloper.com/', { cache: 'force-cache' });
+  return res.json();
+}
+```
+Client Router Caching Adjustments: Page components aren't cached by default, ensuring up-to-date data for in-app navigation.
+To retain original caching behavior, configure the staleTime in next.config.js:
+
+```jsx
+// next.config.js
+module.exports = {
+  experimental: {
+    staleTimes: {
+      dynamic: 30, // Dynamic route cache for 30 seconds
+      static: 180, // Static route cache for 180 seconds
+    },
+  },
+};
+```
+
+## Asynchronous Request-Specific APIs
+Next.js 15 now supports asynchronous request-specific APIs such as headers, cookies, params, and searchParams, providing a smoother data handling experience.
+
+```jsx
+// search/page.tsx
+
+export default async function SearchPage({ searchParams }) {
+  const params = await searchParams;
+  const query = params.query;
+
+  return <div>Results for: {query}</div>;
+}
+```
+
+## Introducing the New Form Component
+Next.js 15 adds the Form component, which brings prefetching, client-side navigation, and progressive enhancement to forms. This component improves speed and efficiency for form-heavy applications.
+
+```jsx
+// FormPage.js
+
+import { Form } from 'next/form';
+
+export default function FormPage() {
+  return (
+    <div>
+      <h1>Next v15 Form Component</h1>
+      <Form action="/search">
+        <input name="query" placeholder="Enter search query" />
+        <button type="submit">Submit</button>
+      </Form>
+    </div>
+  );
+}
+```
+
+## TurboPack: Accelerated Development
+With TurboPack, developers experience faster local server startups and code refreshes. Activate it with next dev --turbo for speed gains up to 75% for server startup and 95% for code updates.
+
+```json
+// package.json
+"scripts": {
+  "dev": "next dev --turbo"
+}
+```
+
+## ESLint 9 Support
+Next.js 15 brings ESLint 9 support, ensuring enhanced React hook support and improved code quality, with backward compatibility for ESLint 8 users.
+
+## Conclusion
+In conclusion, Next.js 15 brings a host of powerful updates, making it one of the most versatile and efficient frameworks for modern web development. With full support for React 19, enhanced caching options, a streamlined form component, and TurboPack for accelerated development, this release optimizes both user experience and developer productivity. The improvements to asynchronous APIs and native TypeScript support further solidify Next.js as a top choice for developers looking to build scalable, high-performance applications. Whether you're upgrading an existing project or starting fresh, Next.js 15 offers the tools needed to push your applications to the next level.
