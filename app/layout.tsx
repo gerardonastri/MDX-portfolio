@@ -8,6 +8,7 @@ import Header from '@/components/header'
 import Footer from '@/components/footer'
 
 import {Person} from 'schema-dts'
+import { Analytics } from "@vercel/analytics/react"
 
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
@@ -147,6 +148,8 @@ export default function RootLayout({
           <Header />
           <main className='grow'>{children}</main>
           <Footer />
+
+          <Analytics />
         </Providers>
       </body>
     </html>
