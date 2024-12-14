@@ -79,3 +79,65 @@ To deploy this project, you can use Expo to generate .apk or .aab file.
 
 This uber clone is a great example of how you can build a full-stack
 application with React Native and Expo
+
+
+ECOMMERCE 
+---
+  title: Hackfarm
+  summary: A frotend website built with NextJs.
+  image: /images/projects/hackfarm.png
+  author: 'Gerardo Nastri'
+  link: 'https://hackfarm.vercel.app/'
+  publishedAt: '2024-12-14'
+---
+
+This is a frotend website for an association built with NextJs and Tailwind CSS.
+
+## Features
+
+- **Next 15**: Use of all the newest practice of Nextjs
+- **Form**: Form validation with Zod and React Hook Form
+- **Animation**: Smooth transition using motion
+- **SSR**: Fast Loading of content with Server Side Rendering
+- **Responsive Design**: the site is accessible from all platforms.
+- **Toast Notification**: Toast Notification when you submit a form.
+- **SEO**: SEO optimization with a score of 100
+
+## Technologies
+
+- **Typescript**: A syntactic superset of JavaScript which adds static typing
+- **NextJs**: A React framework for building static and dynamic websites.
+- **Vercel**: A cloud platform for static sites and serverless functions.
+- **Tailwind CSS**: A utility-first CSS framework packed with classes
+- **Framer Motion**: A tool for animations
+- **ZOD**: A TypeScript-first schema declaration and validation library
+- **Shadcn/UI**: A component distribution system
+
+## Getting Started
+
+To get started with this project, you can clone the repository and install the
+dependencies:
+
+```bash
+git clone https://github.com/gerardonastri/hackfarm.git
+cd hackfarm
+npm install
+```
+
+Once the dependencies are installed, you can run the development server:
+
+```bash
+npm run dev
+```
+
+The development server will start at `http://localhost:3000`.
+
+## Deployment
+
+To deploy this project, you can use Vercel. You can link your GitHub repository
+to Vercel and deploy the project with a single click.
+
+## Conclusion
+
+This website is a great example of a frotend
+application with NextJs 15. 
