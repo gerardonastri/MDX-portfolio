@@ -55,7 +55,7 @@ export default function CVSection() {
                   Download CV
                 </Button>
                 <p className="text-xs text-muted-foreground text-center">
-                  PDF • Aggiornato {new Date().toLocaleDateString("it-IT")}
+                  PDF • Updated {new Date().toLocaleDateString("it-IT")}
                 </p>
               </div>
             </div>
