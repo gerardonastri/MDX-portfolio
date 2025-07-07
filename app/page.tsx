@@ -4,6 +4,9 @@ import RecentPosts from "@/components/recent-posts";
 import RecentProjects from "@/components/recent-projects";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
+import SkillsSection from "@/components/skills-section"
+import AboutSection from "@/components/about-section"
+import CVSection from "@/components/cv-section"
 
 export default function Home() {
 
@@ -12,9 +15,12 @@ export default function Home() {
     <div className="py-24">
       <div className="container max-w-3xl">
         <Intro />
+        <AboutSection/>
+        <SkillsSection />
         {/* <MDXRemote source={content} /> */}
         <RecentPosts />
         <RecentProjects />
+        <CVSection />
         <NewsletterForm />
       </div>
     </div>
