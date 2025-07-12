@@ -12,7 +12,7 @@ export default function Intro() {
           <div className="flex items-center gap-2 mb-4">
             <Badge variant="secondary" className="gap-1">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              Disponibile per progetti
+              Available for projects
             </Badge>
           </div>
         </Reveal>
