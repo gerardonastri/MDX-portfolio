@@ -21,7 +21,7 @@ export default function Home() {
         <RecentPosts />
         <RecentProjects />
         <CVSection />
-        <NewsletterForm />
+        {/* <NewsletterForm /> */}
       </div>
     </div>
   );
