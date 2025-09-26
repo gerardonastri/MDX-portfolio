@@ -8,7 +8,7 @@ import Reveal from "@/utils/Reveal"
 export default function CVSection() {
   const handleDownloadCV = () => {
     // Qui inserisci il link al tuo CV
-    const cvUrl = "/cv/curriculum.pdf" 
+    const cvUrl = "/cv/gerardo-nastri.pdf" 
     const link = document.createElement("a")
     link.href = cvUrl
     link.download = "Gerardo_Nastri_CV.pdf"

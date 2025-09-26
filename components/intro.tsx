@@ -29,9 +29,7 @@ export default function Intro() {
 
         <Reveal>
           <p className="mt-4 font-light text-muted-foreground leading-relaxed">
-            I am a full-stack developer specializing in web and mobile solutions. Driven by a passion for technology and
-            a commitment to innovation, I focus on building seamless and functional digital experiences. Despite my
-            young age, I have already developed skills that allow me to tackle complex and dynamic projects.
+           I am a full-stack developer specializing in web and mobile solutions. Driven by a passion for technology and a commitment to innovation, I focus on building seamless and functional digital experiences. Despite my young age, I have already developed skills that allow me to tackle complex and dynamic projects, while currently pursuing a degree in Computer Science at the University of Salerno.
           </p>
         </Reveal>
 
