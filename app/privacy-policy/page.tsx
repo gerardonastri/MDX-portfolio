@@ -2,12 +2,12 @@ import React from "react";
 
 export default function PrivacyPolicy() {
   return (
-    <main className="max-w-3xl mx-auto px-4 py-12 text-base leading-7 text-gray-800 dark:text-gray-200">
+    <main className="pt-[130px] max-w-3xl mx-auto px-4 py-12 text-base leading-7 text-gray-800 dark:text-gray-200">
       <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
-      <p className="mb-4">Ultimo aggiornamento: Luglio 2025</p>
+      <p className="mb-4">Ultimo aggiornamento: Settembre 2025</p>
 
       <p className="mb-4">
-        Il presente sito web (<strong>gerardonastri.it</strong>) è gestito da Gerardo Nastri,
+        Il presente sito web (<strong>gerardonastri.tech</strong>) è gestito da Gerardo Nastri,
         sviluppatore web. Questa informativa sulla privacy descrive come vengono
         raccolti, utilizzati e protetti i dati personali degli utenti che compilano il modulo di contatto.
       </p>

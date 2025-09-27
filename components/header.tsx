@@ -15,9 +15,9 @@ export default function Header() {
         </div>
 
         <ul className="flex items-center gap-6 text-sm font-medium text-muted-foreground sm:gap-10">
-          <li className="transition-all duration-200 hover:text-foreground hover:scale-105">
+          {/* <li className="transition-all duration-200 hover:text-foreground hover:scale-105">
             <TransitionLink href="/posts">Posts</TransitionLink>
-          </li>
+          </li> */}
           <li className="transition-all duration-200 hover:text-foreground hover:scale-105">
             <TransitionLink href="/projects">Projects</TransitionLink>
           </li>

@@ -18,7 +18,7 @@ export default function Home() {
         <AboutSection/>
         <SkillsSection />
         {/* <MDXRemote source={content} /> */}
-        <RecentPosts />
+        {/* <RecentPosts /> */}
         <RecentProjects />
         <CVSection />
         {/* <NewsletterForm /> */}
