@@ -28,7 +28,7 @@ const skillCategories = [
   {
     title: "Tools & Others",
     icon: <Zap className="w-5 h-5" />,
-    skills: ["Git", "Firebase", "Supabase", "SEO", "Vercel", "Docker"],
+    skills: ["Git", "Firebase", "Supabase", "SEO", "SQL", "C/C++"],
     color:
       "bg-orange-50 text-orange-700 border-orange-200 dark:bg-orange-950 dark:text-orange-300 dark:border-orange-800",
   },

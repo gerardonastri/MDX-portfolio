@@ -1,5 +1,6 @@
 import Image from "next/image"
-import authorImage from "@/public/images/authors/me.jpg"
+// import authorImage from "@/public/images/authors/me.jpg"
+import authorImage from "@/public/images/intro-img.png"
 import Reveal from "@/utils/Reveal"
 import { Badge } from "@/components/ui/badge"
 import { MapPin, Calendar, Code } from "lucide-react"
@@ -24,7 +25,7 @@ export default function Intro() {
         </Reveal>
 
         <Reveal>
-          <p className="mt-4 text-xl text-muted-foreground font-medium">Full-Stack Developer & Mobile Specialist</p>
+          <p className="mt-4 text-xl text-muted-foreground font-medium">Full-Stack Developer</p>
         </Reveal>
 
         <Reveal>
@@ -52,11 +53,11 @@ export default function Intro() {
       </div>
 
       <div className="relative w-full sm:w-[unset]">
-        <Reveal>
-          <div className="relative">
+        <Reveal className="w-full">
+          <div className="relative w-full">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-lg transform rotate-3"></div>
             <Image
-              className="relative flex-1 rounded-lg grayscale hover:grayscale-0 transition-all duration-500 w-full sm:w-[unset] max-h-[350px] sm:max-h-[280px] object-cover shadow-xl"
+              className="relative flex-1 rounded-lg grayscale hover:grayscale-0 transition-all duration-500 w-full sm:w-[unset] max-h-[350px] max-w-[100%] sm:max-h-[280px] object-cover shadow-xl"
               src={authorImage || "/placeholder.svg"}
               alt="Gerardo Nastri"
               width={200}
