@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio — Gerardo Nastri
 
-## Getting Started
+Questo è il portfolio personale di **Gerardo Nastri**, sviluppatore **Full-Stack & Mobile** specializzato in tecnologie moderne per la creazione di prodotti web e applicazioni mobile, con attenzione alla qualità del codice, all’esperienza utente e all’architettura del software.
 
-First, run the development server:
+> **Live:** https://gerardonastri.tech
+
+---
+
+## 🎯 Obiettivo del Portfolio
+
+Presentare:
+- **Identità professionale**
+- **Progetti selezionati reali**
+- **Competenze tecniche concrete**
+- **Contatto diretto per collaborazioni, consulenze e opportunità**
+
+Il focus è sulla **chiarezza**, sull’accessibilità e su una comunicazione visiva **minimalista**.
+
+---
+
+## 🧠 Stack Tecnologico
+
+| Tecnologia       | Utilizzo |
+|------------------|----------|
+| **Next.js 14**   | Rendering, routing e performance |
+| **React**        | Componenti UI e gestione stato |
+| **TypeScript**   | Sicurezza e robustezza nel codice |
+| **Tailwind CSS** | Design system modulare, layout responsive |
+| **Framer Motion**| Animazioni fluide e micro-interazioni |
+| **Vercel**       | Deploy e distribuzione globale |
+
+---
+
+## ✨ Caratteristiche
+
+### Design Minimalista
+Tipografia chiara, palette neutra e layout pulito per mettere al centro **i contenuti**, non gli effetti.
+
+### Sezione Progetti Selezionati
+Ogni progetto mostra:
+- problema affrontato
+- soluzioni tecniche adottate
+- stack utilizzato
+- preview live e codice sorgente
+
+### Esperienza Developer First
+Struttura leggibile, sezioni brevi, navigazione immediata e informazioni altamente scansionabili (HR-friendly).
+
+### Animazioni Sottili e Coerenti
+Transizioni con **Framer Motion** pensate per accompagnare la navigazione senza appesantire.
+
+---
+
+## 📦 Installazione Locale
 
 ```bash
+git clone https://github.com/gerardonastri/portfolio.git
+cd portfolio
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
