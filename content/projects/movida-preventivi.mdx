@@ -1,0 +1,79 @@
+---
+title: Movida Quotes — Smart Proposal & Contract Generator
+summary: Fast, offline-first PWA for creating, managing, and exporting professional event quotes and contracts on the go, featuring a smart catalog and resilient cloud synchronization.
+image: /images/projects/movida-quotes.png
+author: 'Gerardo Nastri'
+github: 'https://github.com/gerardonastri/movida-preventivi.git'
+publishedAt: '2026-04-21'
+---
+
+**Movida Quotes** is a production-grade internal tool engineered to accelerate the sales pipeline of an event and animation agency. It replaces slow, manual document creation with a lightning-fast, offline-capable Progressive Web App (PWA).
+
+Designed for professionals who are constantly on the move, the application allows users to generate complex, perfectly formatted PDF proposals and contracts directly from their smartphone or tablet, even in venues with zero network connectivity.
+
+The architecture strictly follows a **Local-First, Cloud-Second** paradigm, prioritizing immediate UI response times and absolute data safety through a custom synchronization layer with Supabase.
+
+---
+
+## Key Features
+
+1. **Instant Quote & Contract Generation** Create dynamic proposals with real-time financial calculations, discounts, and custom footers. The app exports high-quality, print-ready PDFs or lightweight JPEG images tailored for instant WhatsApp sharing.
+
+2. **Smart Catalog & "Frictionless" UX** A dynamic service catalog that automatically categorizes items using Regex-based text tags (e.g., `[SHOW]`). The UI adapts intelligently—tags are used for filtering in the app but are automatically stripped out during PDF generation for a clean client-facing document.
+
+3. **Context-Aware Math & "Omaggio" Detection** The calculation engine parses service names and notes in real-time. Typing the word "omaggio" (free gift) automatically zeroes out the item's cost and prevents double-discounting, eliminating the need for manual toggles.
+
+4. **Client Memory & Location Manager** An inline-editable database of venues and clients ensures rapid autocomplete during data entry. The UI employs direct manipulation (inline editing) rather than modal popups, drastically reducing friction.
+
+5. **Defensive API Synchronization** The app syncs its catalog with an external Wix site. To bypass aggressive CORS policies and proxy failures in production, the app utilizes native Vercel Rewrites, creating a secure, serverless tunnel between the app and the external CMS.
+
+6. **Offline-First Resilience** All data (Quotes, Settings, Catalog, Locations) is instantly written to and read from `localStorage`, while a debounced background worker syncs the state silently to Supabase. If the cloud is unreachable, the app continues to function flawlessly.
+
+---
+
+## Technology Stack
+
+- **Frontend:** React 19, Vite, Tailwind CSS, Framer Motion  
+- **Backend & Database:** Supabase (PostgreSQL, Realtime APIs)  
+- **State & Storage:** LocalStorage as Single Source of Truth, Custom Hooks for Background Sync (`useAppData`)  
+- **Document Generation:** `html2pdf.js` (Client-side HTML-to-Canvas-to-PDF rendering)  
+- **Infrastructure & Routing:** Vercel (Serverless Edge Rewrites for CORS bypass)  
+- **Architecture:** Local-First, PWA, Defensive State Management, Optimistic UI
+
+---
+
+## Architecture Overview
+
+### The "Apple-Like" Design Philosophy
+The UI/UX is built around the concept of *Invisible Technology*. Features like Haptic Feedback (simulated through layout animations), instant rendering, and smart text parsing are designed to reduce the user's cognitive load. The software anticipates needs rather than asking for configurations.
+
+### Local-First Data Strategy
+Traditional web apps fetch a loading spinner while waiting for the database. Movida Quotes flips this model:
+1. **Synchronous Read:** Upon mounting, the app reads immediately from the local device storage. Render time is practically 0ms.
+2. **Asynchronous Sync:** In the background, it fetches the latest state from Supabase.
+3. **Smart Override:** If remote data is newer, it seamlessly updates the local cache and UI without disrupting the user.
+
+---
+
+## Case Study: Resilient Architecture & Defensive Coding
+
+Building an app that must never fail requires anticipating edge cases, especially around network reliability and external APIs.
+
+### 1. The Vercel Serverless Tunnel
+Fetching JSON catalogs from external legacy CMS platforms (like Wix) directly from a client browser often results in strict CORS blocks. Instead of relying on unstable free proxies, the app leverages a `vercel.json` rewrite rule. This offloads the API request to Vercel's Edge Network, acting as a secure, high-speed proxy that bypasses browser restrictions entirely.
+
+### 2. Defensive State Management
+When an external API fails, poorly written apps crash or overwrite good data with empty arrays. Movida Quotes implements a "Defensive State" mechanism: if the Wix catalog API goes down, the app detects the failure, aborts the Supabase sync to prevent data corruption, and falls back gracefully to the last known good state, alerting the user with non-blocking UI feedback.
+
+### 3. Client-Side Rendering Engine
+To avoid the costs and delays of server-side PDF generation, the app uses a hidden, out-of-viewport DOM node to construct the document. It maps state directly to HTML, strips internal meta-tags via Regex, and uses `html2canvas` to generate a high-fidelity image or PDF entirely on the device's CPU.
+
+**Result:** A fully autonomous, blazing-fast application that empowers the sales team to close deals on the spot, without ever seeing a loading screen.
+
+---
+
+## Deployment
+The project is deployed on **Vercel**, taking advantage of optimized build caching and Serverless Rewrites for cross-origin API management.
+
+## Repository
+- GitHub Repository: https://github.com/gerardonastri/movida-preventivi.git
