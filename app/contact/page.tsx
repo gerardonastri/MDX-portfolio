@@ -3,33 +3,35 @@ import ContactInfo from "@/components/contact-info"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact - Gerardo Nastri",
-  description: "Get in touch with me for your next project. Let's build something amazing together.",
+  title: "Contact | Gerardo Nastri",
+  description: "Available for freelance and collaborations. Let's build your next digital product.",
 }
 
 export default function ContactPage() {
   return (
-    <div className="py-24">
-      <div className="container max-w-4xl">
-        <div className="text-center mb-16 mt-6">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text">
-            Let&#39;s talk about your project
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to bring your ideas to life? I&#39;d love to hear about your project and discuss how we can work together
-            to create something amazing.
-          </p>
+    <main className="py-24 md:py-32 lg:py-40">
+      {/* Utilizziamo rigorosamente la classe container per l'allineamento perfetto con l'header */}
+      <div className="container">
+        
+        {/* Editorial Section Tag */}
+        <div className="mb-16 md:mb-24 flex items-center gap-6">
+          <div className="h-[1px] w-12 bg-foreground/20"></div>
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground">
+            04. Contact
+          </span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2">
-            <ContactForm />
-          </div>
-          <div className="lg:col-span-1">
+        {/* Asymmetrical Layout: 5 colonne (Sticky) vs 7 colonne */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          <div className="lg:col-span-5 lg:sticky lg:top-32">
             <ContactInfo />
           </div>
+          <div className="lg:col-span-7">
+            <ContactForm />
+          </div>
         </div>
+
       </div>
-    </div>
+    </main>
   )
 }

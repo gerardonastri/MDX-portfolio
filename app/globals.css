@@ -3,6 +3,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Google Fonts ────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'Syne', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+   /* Palette */
+  --bg:        #0a0a0a;
+  --bg2:       #0f0f0f;
+  --surface:   #111111;
+  --border:    #1a1a1a;
+  --border2:   #242424;
+  --text:      #f0ede8;
+  --text2:     #7a756e;
+  --text3:     #3a3734;
+  --lime:      #c8f060;
+  --lime2:     #b8e050;
+ 
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -106,6 +128,21 @@
   }
 }
 
+/* Force dark always */
+html {
+  background: var(--bg);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+ 
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body{
   transition-property: opacity, background, transform, filter;
   transition-timing-function: ease-in-out;
@@ -118,4 +155,29 @@ body{
   background-color: black;
   transform: translateY(40px);
   filter: blur(12px);
+}
+/* ─── Typography ─────────────────────────────── */
+.font-serif  { font-family: var(--font-serif) !important; }
+.font-sans   { font-family: var(--font-sans)  !important; }
+.font-mono   { font-family: var(--font-mono)  !important; }
+ 
+/* Title utility — used in some existing components */
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1.1;
+}
+ 
+/* ─── Scrollbar ──────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--border2); border-radius: 2px; }
+ 
+/* ─── Selection ──────────────────────────────── */
+::selection {
+  background: rgba(200, 240, 96, 0.2);
+  color: var(--text);
 }
