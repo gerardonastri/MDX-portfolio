@@ -33,7 +33,7 @@ export default async function Project({
         {/* Back link */}
         <Link
           href="/projects"
-          className="group mb-14 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-[#3a3734] transition-colors duration-300 hover:text-[#c8f060]"
+          className="group mb-14 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-[#504f4f] transition-colors duration-300 hover:text-[#c8f060]"
         >
           <svg
             className="transition-transform duration-300 group-hover:-translate-x-1"
@@ -83,7 +83,7 @@ export default async function Project({
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-[#3a3734] transition-colors hover:text-[#c8f060]"
+                className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-[#504f4f] transition-colors hover:text-[#c8f060]"
               >
                 Live site
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -98,7 +98,7 @@ export default async function Project({
           </h1>
 
           {summary && (
-            <p className="mt-5 max-w-xl text-[16px] leading-[1.75] text-[#5a5754]">
+            <p className="mt-5 max-w-xl text-[16px] leading-[1.75] text-[#797775]">
               {summary}
             </p>
           )}
@@ -138,15 +138,15 @@ export default async function Project({
         {/* MDX body */}
         <main className="prose prose-invert prose-lg max-w-none
           prose-headings:font-serif prose-headings:font-normal prose-headings:tracking-[-0.025em] prose-headings:text-[#f0ede8]
-          prose-p:text-[#5a5754] prose-p:leading-[1.85] prose-p:text-[15px]
+          prose-p:text-[#797775] prose-p:leading-[1.85] prose-p:text-[15px]
           prose-a:text-[#c8f060] prose-a:no-underline hover:prose-a:underline
           prose-strong:text-[#f0ede8] prose-strong:font-semibold
           prose-code:text-[#c8f060] prose-code:bg-[#111] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[13px] prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
           prose-pre:bg-[#0d0d0d] prose-pre:border prose-pre:border-[#1a1a1a] prose-pre:rounded-xl
-          prose-blockquote:border-l-[#c8f060]/40 prose-blockquote:text-[#5a5754] prose-blockquote:italic
+          prose-blockquote:border-l-[#c8f060]/40 prose-blockquote:text-[#797775] prose-blockquote:italic
           prose-hr:border-[#1a1a1a]
           prose-img:rounded-xl prose-img:border prose-img:border-[#1a1a1a]
-          prose-li:text-[#5a5754]
+          prose-li:text-[#797775]
         ">
           <MDXContent source={content} />
         </main>
@@ -155,7 +155,7 @@ export default async function Project({
         <div className="mt-20 flex items-center justify-between border-t border-[#141414] pt-10">
           <Link
             href="/projects"
-            className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#3a3734] transition-colors hover:text-[#c8f060]"
+            className="group inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#504f4f] transition-colors hover:text-[#c8f060]"
           >
             <svg
               className="transition-transform duration-300 group-hover:-translate-x-1"

@@ -31,7 +31,7 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
 
               {/* Top row */}
               <div className="relative z-10 flex items-start justify-between p-5">
-                <span className="font-mono text-[10px] tracking-[0.1em] text-[#3a3734]">
+                <span className="font-mono text-[10px] tracking-[0.1em] text-[#504f4f]">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="translate-x-1 -translate-y-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100">
@@ -59,7 +59,7 @@ export default function Projects({ projects }: { projects: ProjectMetadata[] }) 
                 <h2 className="mb-1 font-serif text-[20px] font-normal leading-tight tracking-[-0.02em] text-[#f0ede8]">
                   {project.title}
                 </h2>
-                <p className="line-clamp-2 text-[13px] leading-relaxed text-[#3a3734] transition-colors duration-300 group-hover:text-[#5a5754]">
+                <p className="line-clamp-2 text-[13px] leading-relaxed text-[#504f4f] transition-colors duration-300 group-hover:text-[#797775]">
                   {project.summary}
                 </p>
 

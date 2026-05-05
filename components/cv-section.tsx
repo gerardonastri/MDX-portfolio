@@ -29,15 +29,15 @@ export default function CVSection() {
               <h2 className="font-serif text-[clamp(28px,4.5vw,44px)] font-normal leading-[1.1] tracking-[-0.025em] text-[#f0ede8]">
                 Let&#39;s build
                 <br />
-                <em className="italic text-[#5a5754]">something together.</em>
+                <em className="italic text-[#797775]">something together.</em>
               </h2>
 
-              <p className="mt-4 max-w-md text-[15px] leading-[1.75] text-[#3a3734]">
+              <p className="mt-4 max-w-md text-[15px] leading-[1.75] text-[#504f4f]">
                 Available for freelance projects, collaborations, and full-time
                 opportunities. I&#39;m always open to interesting challenges.
               </p>
 
-              <div className="mt-6 flex flex-col gap-3 text-[14px] text-[#5a5754] sm:flex-row sm:items-center sm:gap-6">
+              <div className="mt-6 flex flex-col gap-3 text-[14px] text-[#797775] sm:flex-row sm:items-center sm:gap-6">
                 <a
                   href="mailto:hello@gerardonastri.it"
                   className="inline-flex items-center gap-2 transition-colors hover:text-[#c8f060]"

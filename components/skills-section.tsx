@@ -49,7 +49,7 @@ export default function SkillsSection() {
                 <span className="font-mono text-[10px] tracking-[0.1em] text-[#2a2a2a]">
                   {cat.id}
                 </span>
-                <span className="text-[13px] font-semibold uppercase tracking-[0.06em] text-[#3a3734] transition-colors duration-300 group-hover:text-[#7a756e]">
+                <span className="text-[13px] font-semibold uppercase tracking-[0.06em] text-[#504f4f] transition-colors duration-300 group-hover:text-[#7a756e]">
                   {cat.title}
                 </span>
               </div>
@@ -57,7 +57,7 @@ export default function SkillsSection() {
                 {cat.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-md border border-[#1e1e1e] bg-[#111] px-3 py-1.5 font-mono text-[12px] text-[#5a5754] transition-all duration-200 hover:border-[#2e2e2e] hover:text-[#f0ede8]"
+                    className="rounded-md border border-[#1e1e1e] bg-[#111] px-3 py-1.5 font-mono text-[12px] text-[#797775] transition-all duration-200 hover:border-[#2e2e2e] hover:text-[#f0ede8]"
                   >
                     {skill}
                   </span>

@@ -31,14 +31,14 @@ export default function AboutSection() {
             </h2>
           </Reveal>
           <Reveal>
-            <p className="mt-6 text-[15px] leading-[1.8] text-[#5a5754]">
+            <p className="mt-6 text-[15px] leading-[1.8] text-[#797775]">
               I&#39;m a full-stack developer from Salerno, currently studying Computer Science
               at the University of Salerno. I specialize in building web and mobile products
               that are both technically solid and genuinely enjoyable to use.
             </p>
           </Reveal>
           <Reveal>
-            <p className="mt-4 text-[15px] leading-[1.8] text-[#5a5754]">
+            <p className="mt-4 text-[15px] leading-[1.8] text-[#797775]">
               What sets me apart: I think in systems, not just features. I care about
               architecture, performance, and the small details that make a product feel
               complete — not just functional.
@@ -50,7 +50,7 @@ export default function AboutSection() {
               {['Basketball', 'Jazz', 'Piano', 'DJ', 'Philosophy', 'Cinema', 'Gym', 'Travel'].map(i => (
                 <span
                   key={i}
-                  className="rounded-full border border-[#222] px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-[#3a3734] transition-colors hover:border-[#333] hover:text-[#5a5754]"
+                  className="rounded-full border border-[#222] px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-[#504f4f] transition-colors hover:border-[#333] hover:text-[#797775]"
                 >
                   {i}
                 </span>
@@ -68,7 +68,7 @@ export default function AboutSection() {
                   0{i + 1}
                 </div>
                 <h3 className="mb-1.5 text-[14px] font-semibold text-[#f0ede8]">{v.label}</h3>
-                <p className="text-[13px] leading-[1.65] text-[#3a3734]">{v.desc}</p>
+                <p className="text-[13px] leading-[1.65] text-[#504f4f]">{v.desc}</p>
               </div>
             </Reveal>
           ))}

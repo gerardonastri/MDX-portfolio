@@ -23,12 +23,12 @@ export default async function ProjectsPage() {
           <h1 className="font-serif text-[clamp(40px,7vw,72px)] font-normal leading-[0.95] tracking-[-0.03em] text-[#f0ede8]">
             Selected
             <br />
-            <em className="italic text-[#5a5754]">projects.</em>
+            <em className="italic text-[#797775]">projects.</em>
           </h1>
         </Reveal>
 
         <Reveal>
-          <p className="mt-6 max-w-md text-[15px] leading-[1.75] text-[#3a3734]">
+          <p className="mt-6 max-w-md text-[15px] leading-[1.75] text-[#504f4f]">
             A curated collection of web and mobile products — each one built with
             intention, precision and a focus on real-world impact.
           </p>

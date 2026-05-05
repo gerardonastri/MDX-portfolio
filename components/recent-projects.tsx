@@ -24,7 +24,7 @@ export default async function RecentProjects() {
         <Reveal>
           <Link
             href="/projects"
-            className="group flex shrink-0 items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#3a3734] transition-colors duration-300 hover:text-[#c8f060]"
+            className="group flex shrink-0 items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-[#504f4f] transition-colors duration-300 hover:text-[#c8f060]"
           >
             All projects
             <svg className="transition-transform duration-300 group-hover:translate-x-1" width="12" height="12" viewBox="0 0 12 12" fill="none">

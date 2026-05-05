@@ -63,7 +63,7 @@ export default function Intro() {
             initial="hidden"
             animate="visible"
             variants={FADE_UP}
-            className="mt-5 font-sans text-[clamp(18px,3vw,26px)] font-semibold tracking-[-0.02em] text-[#5a5754]"
+            className="mt-5 font-sans text-[clamp(18px,3vw,26px)] font-semibold tracking-[-0.02em] text-[#797775]"
           >
             Full-Stack Developer
           </motion.p>
@@ -116,7 +116,7 @@ export default function Intro() {
             className="mt-10 flex items-center gap-3"
           >
             <span className="h-px w-10 bg-[#2a2a2a]" />
-            <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#3a3734]">
+            <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#504f4f]">
               Selected projects &amp; collaborations
             </span>
           </motion.div>
@@ -164,7 +164,7 @@ export default function Intro() {
           { label: 'Degree', value: 'CS @ UNISA' },
         ].map(({ label, value }) => (
           <div key={label} className="flex flex-col gap-1">
-            <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-[#3a3734]">
+            <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-[#504f4f]">
               {label}
             </span>
             <span className="text-[14px] font-semibold text-[#f0ede8]">{value}</span>
