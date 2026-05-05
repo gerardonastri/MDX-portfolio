@@ -1,90 +1,77 @@
-"use client"
+'use client'
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import Reveal from "@/utils/Reveal"
-import { Target, Heart, Lightbulb, Rocket, Zap, Music, Camera, BookOpen, Plane, Headphones } from "lucide-react"
-
-const interests = [
-  { name: "Basketball", icon: <Target className="w-4 h-4" /> },
-  { name: "Gym", icon: <Zap className="w-4 h-4" /> },
-  { name: "Art Cinema", icon: <Camera className="w-4 h-4" /> },
-  { name: "Jazz Music", icon: <Music className="w-4 h-4" /> },
-  { name: "Piano", icon: <Music className="w-4 h-4" /> },
-  { name: "DJ", icon: <Headphones className="w-4 h-4" /> },
-  { name: "Philosophy", icon: <BookOpen className="w-4 h-4" /> },
-  { name: "Traveling", icon: <Plane className="w-4 h-4" /> },
-]
+import { motion } from 'framer-motion'
+import Reveal from '@/utils/Reveal'
 
 const values = [
-  {
-    icon: <Target className="w-6 h-6" />,
-    title: "Precision",
-    description: "Attention to detail in every project",
-  },
-  {
-    icon: <Heart className="w-6 h-6" />,
-    title: "Passion",
-    description: "Genuine love for technology",
-  },
-  {
-    icon: <Lightbulb className="w-6 h-6" />,
-    title: "Innovation",
-    description: "Always seeking creative solutions",
-  },
-  {
-    icon: <Rocket className="w-6 h-6" />,
-    title: "Growth",
-    description: "Continuous learning and improvement",
-  },
+  { label: 'Precision', desc: 'Obsessive attention to every detail, from architecture to pixel.' },
+  { label: 'Clarity', desc: 'Clean code, clear interfaces—complexity hidden from the user.' },
+  { label: 'Craft', desc: 'Products built with care, not just shipped to meet a deadline.' },
+  { label: 'Growth', desc: 'Constantly learning, constantly pushing what I can build.' },
 ]
 
 export default function AboutSection() {
   return (
-    <section className="pb-24">
-      <div>
-        <Reveal>
-          <h2 className="title mb-12">About Me</h2>
-        </Reveal>
+    <section id="about" className="pb-28 pt-28">
+      <div className="mb-12 flex items-center gap-3">
+        <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-[#c8f060]">
+          01 / About
+        </span>
+        <span className="flex-1 h-px bg-[#1a1a1a]" />
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1fr]">
+        {/* Left: text */}
+        <div>
           <Reveal>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">My Values</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {values.map((value) => (
-                    <div key={value.title} className="text-center p-3 rounded-lg bg-muted/50">
-                      <div className="flex justify-center mb-2 text-primary">{value.icon}</div>
-                      <h4 className="font-medium text-sm">{value.title}</h4>
-                      <p className="text-xs text-muted-foreground mt-1">{value.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <h2 className="font-serif text-[clamp(32px,5vw,48px)] font-normal leading-[1.1] tracking-[-0.025em] text-[#f0ede8]">
+              Young, but already
+              <br />
+              <em className="italic text-[#7a756e]">sharp and reliable.</em>
+            </h2>
+          </Reveal>
+          <Reveal>
+            <p className="mt-6 text-[15px] leading-[1.8] text-[#5a5754]">
+              I&#39;m a full-stack developer from Salerno, currently studying Computer Science
+              at the University of Salerno. I specialize in building web and mobile products
+              that are both technically solid and genuinely enjoyable to use.
+            </p>
+          </Reveal>
+          <Reveal>
+            <p className="mt-4 text-[15px] leading-[1.8] text-[#5a5754]">
+              What sets me apart: I think in systems, not just features. I care about
+              architecture, performance, and the small details that make a product feel
+              complete — not just functional.
+            </p>
           </Reveal>
 
           <Reveal>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-4">Interests</h3>
-                <p className="text-muted-foreground mb-4 text-sm">
-                  When I{"'"}m not coding, I love playing basketball, working out at the gym, watching art films, and
-                  playing piano. Jazz music inspires me greatly, as does DJing on weekends. I love traveling to discover
-                  new cultures and reflecting on philosophical themes.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {interests.map((interest) => (
-                    <Badge key={interest.name} variant="outline" className="gap-1">
-                      {interest.icon}
-                      {interest.name}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            <div className="mt-10 flex flex-wrap gap-2">
+              {['Basketball', 'Jazz', 'Piano', 'DJ', 'Philosophy', 'Cinema', 'Gym', 'Travel'].map(i => (
+                <span
+                  key={i}
+                  className="rounded-full border border-[#222] px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-[#3a3734] transition-colors hover:border-[#333] hover:text-[#5a5754]"
+                >
+                  {i}
+                </span>
+              ))}
+            </div>
           </Reveal>
+        </div>
+
+        {/* Right: values */}
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {values.map((v, i) => (
+            <Reveal key={v.label}>
+              <div className="group rounded-xl border border-[#1a1a1a] bg-[#0f0f0f] p-5 transition-all duration-300 hover:border-[#2a2a2a] hover:bg-[#111]">
+                <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-[#c8f060]">
+                  0{i + 1}
+                </div>
+                <h3 className="mb-1.5 text-[14px] font-semibold text-[#f0ede8]">{v.label}</h3>
+                <p className="text-[13px] leading-[1.65] text-[#3a3734]">{v.desc}</p>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

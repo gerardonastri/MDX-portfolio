@@ -26,9 +26,9 @@ export default function Header() {
           </li>
         </ul>
 
-        <div>
+        {/* <div>
           <ThemeToggle />
-        </div>
+        </div> */}
       </nav>
     </header>
   )
